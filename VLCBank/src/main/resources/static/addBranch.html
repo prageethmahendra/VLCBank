@@ -1,19 +1,30 @@
+<div ng-include="'mainPage.html'" ng-controller="toolBarController"></div>
 <div>
     <div>
         <form name="createBranchForm" id="form" class="input-form">
-            <div>
-                <label>Branch Name : </label>
+            {{error}}
+            <table style="width: 100%">
+                <tr>
+                    <td>
+                        <label>Branch Name : </label>
+                    </td>
+                    <td style="width: 75">
+                        <input type="text" name="branchName" placeholder="Not Specified" ng-model="branchName"
+                               required/>
+                    </td>
+                </tr>
+                <tr>
 
+                    <td>
+                        <label>Branch Id :</label>
+                    </td>
 
-                <input type="text" placeholder="branchName" ng-model="branchName"/>
-            </div>
-
-            <div>
-                <label>Branch Id :</label>
-                <input type="text" placeholder="branchId" ng-model="branchId"/>
-                <br>
-            </div>
-            <button ng-click="createBranch()">Save</button>
+                    <td style="width: 75%">
+                        <input type="text" name="branchId" placeholder="Auto Generated" ng-model="branchId" disabled/>
+                    </td>
+                </tr>
+            </table>
+            <button class="input-form" style="width: 25%" ng-click="createBranch()">Save</button>
         </form>
     </div>
 </div>
